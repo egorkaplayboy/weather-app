@@ -12,7 +12,7 @@
   padding: 40px;
   max-width: 750px;
   width: 100%;
-  background: $lite-background;
+  background: $light-background;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 }
@@ -29,7 +29,7 @@
   right: 20px;
   cursor: pointer;
   svg {
-    transition: 0.4s;
+    transition: 0.3s ease;
   }
   &:hover {
     svg {
