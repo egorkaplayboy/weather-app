@@ -23,7 +23,7 @@ const Home = (props: Props) => {
     <div className={s.home}>
       <div className={s.warpper}>
         <ThisDay weather={weather} />
-        <ThisDayInfo />
+        <ThisDayInfo weather={weather} />
       </div>
       <Days />
     </div>

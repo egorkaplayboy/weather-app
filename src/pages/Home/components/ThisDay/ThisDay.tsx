@@ -4,10 +4,26 @@ import { GlobalSvgSelector } from "../../../../assets/icons/global/GlobalSvgSele
 import { Weather } from "../../../../store/types/types";
 
 type Props = {
-  weather: Weather
+  weather: Weather;
 };
 
 const ThisDay = ({ weather }: Props) => {
+  var now = new Date().toLocaleTimeString().slice(0, -3);
+
+  const getWeatherImageId = (weatherType: string) => {
+    switch (weatherType) {
+      case "Sun":
+        return "Sun" ;
+      case "Rain":
+        return "Rain";
+      default:
+        return null;
+    }
+  };
+
+  const weatherType = weather.weather[0].main
+  const weatherImageId = getWeatherImageId(weatherType);
+
   return (
     <div className={s.this__day}>
       <div className={s.top__block}>
@@ -15,14 +31,14 @@ const ThisDay = ({ weather }: Props) => {
           <div className={s.this__temp}>{Math.floor(weather.main.temp)}°</div>
           <div className={s.this__day_name}>Сегодня</div>
         </div>
-        <GlobalSvgSelector id="sun"/>
+        <GlobalSvgSelector id={weatherImageId} />
       </div>
       <div className={s.bottom__block}>
         <div className={s.this__time}>
-          Время: <span>21:54</span>
+          Время: <span>{now}</span>
         </div>
         <div className={s.this__city}>
-          Город: <span>Иваново</span>
+          Город: <span>{weather.name}</span>
         </div>
       </div>
     </div>

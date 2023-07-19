@@ -1,22 +1,29 @@
-import React from 'react'
-import { Item } from './ThisDayInfo'
-import s from './ThisDayInfo.module.scss'
-import { IndicatorSvgSelector } from '../../../../assets/icons/indicators/IndicatorSvgSelector'
+import React from "react";
+import { Item } from "./ThisDayInfo";
+import s from "./ThisDayInfo.module.scss";
+import { IndicatorSvgSelector } from "../../../../assets/icons/indicators/IndicatorSvgSelector";
+import { Weather } from "../../../../store/types/types";
 
 type Props = {
-  item: Item
-}
+  item: Item;
+};
 
 const ThisDayItem = ({ item }: Props) => {
-  const {icon_id, name, value} = item
+  const { icon_id, name, value } = item;
+
+  const counts = [
+    {}
+  ]
 
   return (
     <div className={s.item}>
-      <div className={s.indicator}><IndicatorSvgSelector id={icon_id}/></div>
+      <div className={s.indicator}>
+        <IndicatorSvgSelector id={icon_id} />
+      </div>
       <div className={s.indicator__name}>{name}</div>
       <div className={s.indicator__value}>{value}</div>
     </div>
-  )
-}
+  );
+};
 
-export default ThisDayItem
+export default ThisDayItem;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface Props {
-  id: string;
+  id: any;
 }
 
 export const GlobalSvgSelector = ({ id }: Props) => {
@@ -64,7 +64,7 @@ export const GlobalSvgSelector = ({ id }: Props) => {
           />
         </svg>
       );
-    case 'rain':
+    case 'Rain':
       return (
         <svg
           width="48"
@@ -224,7 +224,7 @@ export const GlobalSvgSelector = ({ id }: Props) => {
           </defs>
         </svg>
       );
-    case 'sun':
+    case 'Sun':
       return (
         <svg
           width="48"
